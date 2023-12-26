@@ -7,10 +7,10 @@ Fonts:
 */
 
 :root{
-    --primary-color: #ff6b6b;
-    --secondary-color: #794afa;
+    --primary-color: #BDAA8C;
+    --secondary-color: #252443;
     --secondary-dark-color: #453c5c;
-    --icon-color:rgba(255, 184, 4, 0.862);
+    --icon-color:#BDAA8C;
 
     --white-color: #fff;
     --light-bg-color: #f2f3f5;
@@ -149,9 +149,9 @@ h4{
 
  .container{
     max-width: 1600px;
-    min-width: 651px;
+    min-width: 1280px;
     margin: 0 auto;
-    background-color: #794afa;
+    background-color: var(--secondary-color);
  }
 
 .flexitem{
@@ -159,7 +159,7 @@ h4{
 }
 
 i{
-    color: var(--icon-color);
+    color: var(--primary-color);
 }
 
 .wrapper{
@@ -245,7 +245,7 @@ i{
 
 
 .container .wrapper .nav-links .list-item li:not(:last-child){
-    border-bottom: 2px solid var(--icon-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .container .wrapper .nav-links .list-item li  a span{
@@ -288,6 +288,62 @@ i{
 }
 
 .container .left-page .nav-links .log .logout i{
-    font-size: 1.5em;
-    padding-right: .3em ;
+    font-size: 1.3em;
+    padding-right: .3em;
+}
+
+/* center page */
+.container .center-page .nav-head{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    margin-top: .3em;
+
+}
+
+.container .center-page .nav-head .head-info{
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: small;
+}
+
+.container .center-page .nav-head .head-info .nav-title{
+    padding: .2em .5em;
+    font-size: 2.8em;
+    font-weight: var(--fw5);
+    text-transform: uppercase;
+}
+
+/* .container .center-page .nav-head .head-info .create-new{
+    padding:  0 1em;
+} */
+
+.container .center-page .nav-head .head-info .create-new input{
+    padding: .5em 1em;
+    margin: 0 4em 0 1em;
+    border: none;
+    font-family: rubik;
+    font-size: small;
+    background-color: rgb(4, 4, 130);
+    color: white;
+    border-radius: 3px;
+    opacity: .8;
+}
+
+.container .center-page .nav-head .head-select{
+    margin: 0 .5em 0 2em;
+}
+
+
+.container .center-page .nav-head{
+    display: flex;
+    align-items: center;
+    
+
+}
+
+.container .center-page .nav-head .head-select select{
+    width: 200px;
+    margin:  0 1em;
 }
