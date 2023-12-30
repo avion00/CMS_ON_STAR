@@ -1,26 +1,31 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const customDropdown = document.querySelector(".custom-dropdown");
-  const selectedOption = customDropdown.querySelector(".selected-option");
-  const optionsList = customDropdown.querySelector(".options");
+var selectField = document.getElementById("selectField");
+var arrowIcon = document.getElementById("arrowIcon");
+var options = document.getElementsByClassName("options");
 
-  selectedOption.addEventListener("click", function () {
-    optionsList.style.display =
-      optionsList.style.display === "block" ? "none" : "block";
-      if (optionsList.style.display === "block"){
-          // optionsList.style.
-      }
-  });
+selectField.onclick = function () {
+  // Toggle the 'active' class to show/hide options
+  this.classList.toggle("active");
 
-  optionsList.addEventListener("click", function (event) {
-    if (event.target.tagName === "LI") {
-      selectedOption.textContent = event.target.textContent;
-      optionsList.style.display = "none";
-    }
-  });
+  // Toggle the rotate class on the arrow icon
+  arrowIcon.classList.toggle("rotate");
 
-  document.addEventListener("click", function (event) {
-    if (!customDropdown.contains(event.target)) {
-      optionsList.style.display = "none";
-    }
-  });
-});
+  // Toggle the display of options
+  var list = document.getElementById("list");
+  list.style.display =
+    list.style.display === "none" || list.style.display === ""
+      ? "block"
+      : "none";
+};
+
+for (var i = 0; i < options.length; i++) {
+  options[i].onclick = function () {
+    // Set the selected text to the clicked option
+    selectField.getElementsByTagName("p")[0].innerHTML =
+      this.getElementsByTagName("p")[0].innerHTML;
+
+    // Hide the options after selection
+    selectField.classList.remove("active");
+    arrowIcon.classList.remove("rotate");
+    document.getElementById("list").style.display = "none";
+  };
+}

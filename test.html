@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hello world</title>
+  <style>
+    .selected-option.active #arrowIcon {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+    }
+
+    /* Add this style to hide the options initially */
+    #list {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="selector">
+    <div id="selectField" class="selected-option">
+      <p>Select social media</p>
+      <img id="arrowIcon" src="icon.svg" alt="arrow icon">
+    </div>
+    <ul id="list">
+      <li class="options">
+        <p>facebook</p>
+      </li>
+      <li class="options">
+        <p>tiktok</p>
+      </li>
+      <li class="options">
+        <p>instagram</p>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  var selectField = document.getElementById("selectField");
+  var arrowIcon = document.getElementById("arrowIcon");
+  var options = document.getElementsByClassName("options");
+
+  selectField.onclick = function () {
+    // Toggle the 'active' class to show/hide options
+    this.classList.toggle("active");
+
+    // Toggle the rotate class on the arrow icon
+    arrowIcon.classList.toggle("rotate");
+
+    // Toggle the display of options
+    var list = document.getElementById("list");
+    list.style.display = (list.style.display === "none" || list.style.display === "") ? "block" : "none";
+  };
+
+  for (var i = 0; i < options.length; i++) {
+    options[i].onclick = function () {
+      // Set the selected text to the clicked option
+      selectField.getElementsByTagName("p")[0].innerHTML = this.getElementsByTagName("p")[0].innerHTML;
+
+      // Hide the options after selection
+      selectField.classList.remove("active");
+      arrowIcon.classList.remove("rotate");
+      document.getElementById("list").style.display = "none";
+    };
+  }
+</script>
+
+</body>
+</html>

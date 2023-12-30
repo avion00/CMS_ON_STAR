@@ -185,7 +185,7 @@ h4{
     max-width: 1600px;
     min-width: 1080px;
     margin: 0 auto;
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
  }
 
 .flexitem{
@@ -374,19 +374,20 @@ i{
 /* .container .center-page .nav-head .head-select .custom-dropdown .selected-option .options */
 
 
-.container .center-page .nav-head .head-select{
+/* .container .center-page .nav-head .head-select{
     width: 200px;
     margin: 0 1em;
     text-align: left;
-}
+} */
 
 /* .container .center-page .nav-head .head-select */
- .custom-dropdown{
+ /* .custom-dropdown{
     width: 100%;
-}
+    margin-top: .3em;
+} */
 
 /* .container .center-page .nav-head .head-select .custom-dropdown */
- .selected-option{
+ /* .selected-option{
     border: 1px solid;
     color: var(--secondary-color);
     background-color: var(--light-bg-color);
@@ -412,27 +413,61 @@ i{
 
 .selected-option:active{
     color: var(--primary-color);
-}
+} */
 
 
 
 /* .container .center-page .nav-head .head-select  */
-.custom-dropdown .options{
+/* .custom-dropdown .options{
     width: 100%;
+    background: transparent;
+    color: var(--light-text-color);
 
-}
+} */
 
 
 /* .container .center-page .nav-head .head-select  */
-.custom-dropdown  .options li {
+/* .custom-dropdown  .options li {
     border: 1px solid;
     width: 100%;
     padding: .3em 1em;
     margin: 0;
+}
 
+.custom-dropdown  .options li:hover{
+    background-color: var(--light-text-color);
+    color: var(--secondary-dark-color)
+}
+
+.custom-dropdown .options li:active{
+    color: var(--primary-color);
 }
 
 .custom-dropdown  .options li:last-child{
-        border-radius:0 0 5px 5px;
-        border-top: 0;
-}
+    border-radius:0 0 5px 5px;
+    border-top: 0;
+} */
+
+
+
+
+/* Add this CSS to handle the rotation */
+.selected-option.active #arrowIcon {
+      transform: rotate(180deg);
+      transition: transform 0.3s ease;
+    }
+
+    .rotate {
+      transform: rotate(180deg);
+    }
+
+    #list {
+      display: flex;
+      font-size: 100px;
+      color: white;
+      z-index: 1000;
+
+
+    }
+
+
