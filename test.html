@@ -43,9 +43,9 @@
 </div>
 
 <script>
-  var selectField = document.getElementById("selectField");
-  var arrowIcon = document.getElementById("arrowIcon");
-  var options = document.getElementsByClassName("options");
+  var selectField = document.querySelector("#selectField");
+  var arrowIcon = document.querySelector("#arrowIcon");
+  var options = document.querySelector(".options");
 
   selectField.onclick = function () {
     // Toggle the 'active' class to show/hide options
@@ -55,19 +55,19 @@
     arrowIcon.classList.toggle("rotate");
 
     // Toggle the display of options
-    var list = document.getElementById("list");
+    var list = document.querySelector("#list");
     list.style.display = (list.style.display === "none" || list.style.display === "") ? "block" : "none";
   };
 
   for (var i = 0; i < options.length; i++) {
     options[i].onclick = function () {
       // Set the selected text to the clicked option
-      selectField.getElementsByTagName("p")[0].innerHTML = this.getElementsByTagName("p")[0].innerHTML;
+      selectField.querySelectorAll("p")[0].innerHTML = this.querySelectorAll("p")[0].innerHTML;
 
       // Hide the options after selection
       selectField.classList.remove("active");
       arrowIcon.classList.remove("rotate");
-      document.getElementById("list").style.display = "none";
+      document.querySelector("#list").style.display = "none";
     };
   }
 </script>

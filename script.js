@@ -1,31 +1,31 @@
-var selectField = document.getElementById("selectField");
-var arrowIcon = document.getElementById("arrowIcon");
-var options = document.getElementsByClassName("options");
 
-selectField.onclick = function () {
-  // Toggle the 'active' class to show/hide options
-  this.classList.toggle("active");
+const optionMenu = document.querySelector(".select-menu"),
+  selectBtn = optionMenu.querySelector(".select-btn"),
+  options = optionMenu.querySelectorAll(".option"),
+  sBtn_text = optionMenu.querySelector(".sBtn-text");
 
-  // Toggle the rotate class on the arrow icon
-  arrowIcon.classList.toggle("rotate");
+// Show/hide options on button click
+selectBtn.addEventListener("click", () =>
+  optionMenu.classList.toggle("active")
+);
 
-  // Toggle the display of options
-  var list = document.getElementById("list");
-  list.style.display =
-    list.style.display === "none" || list.style.display === ""
-      ? "block"
-      : "none";
-};
+// Update selected option and hide options on option click
+options.forEach((option) => {
+  option.addEventListener("click", () => {
+    let selectedOption = option.querySelector(".option-text").innerText;
+    sBtn_text.innerText = selectedOption;
 
-for (var i = 0; i < options.length; i++) {
-  options[i].onclick = function () {
-    // Set the selected text to the clicked option
-    selectField.getElementsByTagName("p")[0].innerHTML =
-      this.getElementsByTagName("p")[0].innerHTML;
+    optionMenu.classList.remove("active");
+  });
+});
 
-    // Hide the options after selection
-    selectField.classList.remove("active");
-    arrowIcon.classList.remove("rotate");
-    document.getElementById("list").style.display = "none";
-  };
-}
+// Hide options when clicking outside the field
+document.addEventListener("click", (e) => {
+  const isClickInside =
+    optionMenu.contains(e.target) || selectBtn.contains(e.target);
+
+  if (!isClickInside) {
+    optionMenu.classList.remove("active");
+  }
+});
+

@@ -50,7 +50,7 @@ body{
     font-weight: 400;
     line-height: 1.4;
     color: var(--dark-color);
-    background-color: var(--white-color);
+    background-color: var(--secondary-color);
 }
 
 a{
@@ -105,25 +105,6 @@ h4{
 }
 
 
-
-/* reuseable css of custom select and option */
-.custom-dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.selected-option {
-    cursor: pointer;
-}
-
-.options {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
-    position: absolute;
-    cursor: pointer;
-}
 
 
 
@@ -185,7 +166,6 @@ h4{
     max-width: 1600px;
     min-width: 1080px;
     margin: 0 auto;
-    /* background-color: var(--secondary-color); */
  }
 
 .flexitem{
@@ -370,104 +350,201 @@ i{
     color: var(--secondary-dark-color);
 }
 
-
-/* .container .center-page .nav-head .head-select .custom-dropdown .selected-option .options */
-
-
-/* .container .center-page .nav-head .head-select{
-    width: 200px;
-    margin: 0 1em;
-    text-align: left;
-} */
-
-/* .container .center-page .nav-head .head-select */
- /* .custom-dropdown{
-    width: 100%;
-    margin-top: .3em;
-} */
-
-/* .container .center-page .nav-head .head-select .custom-dropdown */
- /* .selected-option{
-    border: 1px solid;
+/* select option  */
+/* this is reuseable in other select by adding more css */
+.select-menu{
+    width: 250px;
     color: var(--secondary-color);
-    background-color: var(--light-bg-color);
-    padding: .3em .3em .3em  1em;
-    margin-top: .3em;
-    transform: .5s;
-    border-radius: 5px;
-    height: 1.8em;
+    height: fit-content;
+    padding:0 1em;
+    margin-top: .5em;
+    position: relative;
+    text-align: left;
+    
+}
+
+.select-menu .select-btn{
+    background-color: #e7eff9;
+    opacity: .9;
     display: flex;
-    align-items: center;
+    padding: 0em 1.3em;
     font-size: small;
+    font-weight: 400;
+    border-radius: 3px;
+    align-items: center;
+    cursor: pointer;
     justify-content: space-between;
-}
-.selected-option p{
-    align-items: left;
+    height: 2.5em;
 }
 
-
-.selected-option img {
-    width: 30px;
-    height: auto;
+.select-btn i{
+    font-size: 20px;
+    transition: 0.3s;
+    color: var(--secondary-color);
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-90deg);
+}
+.select-menu.active .select-btn{
+    border-radius: 3px 3px 0 0;
 }
 
-.selected-option:active{
+/* for only nav head select option */
+.container .center-page :where(.items-one, .items-two) .nav-head .select-menu .select-btn{
+    height: 2em;
+}
+/* end */
+
+.select-menu .options{
+    position: absolute;
+    width: 88%;
+    display: none;
     color: var(--primary-color);
-} */
+    background-image: linear-gradient(to right bottom, #051937, #02083e, #1f234c, #0c62b8, #82aef1);
+    box-shadow: -1px -1px 10px 5px  #00000023;
+    z-index: 1;
+}
+
+.select-menu.active .options{
+    display: block;
+}
+
+.options .option{
+    cursor: pointer;
+    font-size: small;
+
+}
+
+.options:last-child{
+    border-radius: 0 0 5px 5px;
+}
+
+.options .option:last-child{
+    border-radius: 0 0 5px 5px;
+}
 
 
+.options .option:not(:last-child){
+    border-bottom: 1px groove var(--primary-color);
+}
 
-/* .container .center-page .nav-head .head-select  */
-/* .custom-dropdown .options{
-    width: 100%;
-    background: transparent;
+.options .option a span{
+    display: flex;
+    margin: 0 1em;
+    padding: .5em .5em;
+    transition: .2s;
+}
+
+
+.options :where(.option, i ):hover{
     color: var(--light-text-color);
 
-} */
+}
+
+.options .option a span:hover {
+    transform: translateX(.5em);
+}
+
+.options .option{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2em;
+    padding-right: .5em;
+}
+
+.options .option i{
+    font-size: 18px;
+}
 
 
-/* .container .center-page .nav-head .head-select  */
-/* .custom-dropdown  .options li {
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin:  .5em 1em 0 1em;
+
+}
+
+.text input{
+    width: 222px;
+    outline: none;
+    border: 0;
+    padding:.5em 1.3em;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: small;
+    opacity: .9;
+    background-color: #d7e4f3;
+}
+
+.text span{
+    margin-top: .2em;
+    color: var(--light-text-color);
+}
+
+/* center page input area */
+.container .center-page .items-one .nav-details .details{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .5em;
+    gap: 1em;
+}
+
+.nav-details {
+    border-bottom: 1px groove var(--primary-color);
+    padding: 1em 0;
+}
+
+.container .center-page{
+    padding: 0 1em;
+}
+
+.details .info{
+    font-size: 20px;
+    text-align: left;
+    margin: 1em 0 0 .6em;
+    font-weight: 600;
+    color: white;
+}
+
+
+.details .inputs{
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.details .inputs .text{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
     border: 1px solid;
-    width: 100%;
-    padding: .3em 1em;
-    margin: 0;
 }
 
-.custom-dropdown  .options li:hover{
-    background-color: var(--light-text-color);
-    color: var(--secondary-dark-color)
+
+
+/* .details .inputs .text .input1{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
 }
 
-.custom-dropdown .options li:active{
-    color: var(--primary-color);
-}
 
-.custom-dropdown  .options li:last-child{
-    border-radius:0 0 5px 5px;
-    border-top: 0;
+.details .inputs .text .input2{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
 } */
 
+/* 
+.details .inputs .text {
+    border: 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-
-
-/* Add this CSS to handle the rotation */
-.selected-option.active #arrowIcon {
-      transform: rotate(180deg);
-      transition: transform 0.3s ease;
-    }
-
-    .rotate {
-      transform: rotate(180deg);
-    }
-
-    #list {
-      display: flex;
-      font-size: 100px;
-      color: white;
-      z-index: 1000;
-
-
-    }
-
+.details .inputs .text .input{
+    display: flex;
+    flex-direction: column;
+} */
 
