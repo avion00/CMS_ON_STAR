@@ -1,31 +1,22 @@
+const optionMenus = document.querySelectorAll(".select-menu");
 
-const optionMenu = document.querySelector(".select-menu"),
-  selectBtn = optionMenu.querySelector(".select-btn"),
-  options = optionMenu.querySelectorAll(".option"),
-  sBtn_text = optionMenu.querySelector(".sBtn-text");
+optionMenus.forEach((optionMenu) => {
+  const selectBtn = optionMenu.querySelector(".select-btn");
+  const sBtn_text = selectBtn.querySelector(".sBtn-text");
+  const options = optionMenu.querySelectorAll(".options .option");
 
-// Show/hide options on button click
-selectBtn.addEventListener("click", () =>
-  optionMenu.classList.toggle("active")
-);
+  selectBtn.addEventListener("click", () => {
+    optionMenu.classList.toggle("active");
+    console.log("Button clicked");
+  });
 
-// Update selected option and hide options on option click
-options.forEach((option) => {
-  option.addEventListener("click", () => {
-    let selectedOption = option.querySelector(".option-text").innerText;
-    sBtn_text.innerText = selectedOption;
-
-    optionMenu.classList.remove("active");
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      let selectedOption = option.querySelector(".option-text").innerText;
+      sBtn_text.innerText = selectedOption;
+      console.log(selectedOption);
+      optionMenu.classList.remove("active");
+      console.log("Option clicked");
+    });
   });
 });
-
-// Hide options when clicking outside the field
-document.addEventListener("click", (e) => {
-  const isClickInside =
-    optionMenu.contains(e.target) || selectBtn.contains(e.target);
-
-  if (!isClickInside) {
-    optionMenu.classList.remove("active");
-  }
-});
-
