@@ -375,6 +375,7 @@ i{
     cursor: pointer;
     justify-content: space-between;
     height: 2.5em;
+    /* width: 102%; */
 }
 
 .select-btn i{
@@ -397,7 +398,7 @@ i{
 
 .select-menu .options{
     position: absolute;
-    width: 88%;
+    width: 88.9%;
     display: none;
     color: var(--primary-color);
     background-image: linear-gradient(to right bottom, #051937, #02083e, #1f234c, #0c62b8, #82aef1);
@@ -408,6 +409,7 @@ i{
 .select-menu.active .options{
     display: block;
 }
+
 
 .options .option{
     cursor: pointer;
@@ -430,7 +432,7 @@ i{
 
 .options .option a span{
     display: flex;
-    margin: 0 1em;
+    margin: 0 .5em;
     padding: .5em .5em;
     transition: .2s;
 }
@@ -449,7 +451,7 @@ i{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 2em;
+    margin: 0 1em;
     padding-right: .5em;
 }
 
@@ -479,7 +481,7 @@ i{
 }
 
 .text span{
-    margin-top: .2em;
+    margin-top: .3em;
     color: var(--light-text-color);
 }
 
@@ -488,11 +490,11 @@ i{
     display: flex;
     flex-wrap: wrap;
     margin-top: .5em;
-    gap: 1em;
+    gap: 2em;
 }
 
 .nav-details {
-    border-bottom: 1px groove var(--primary-color);
+    border-bottom: 1px groove var(--light-text-color);
     padding: 1em 0;
 }
 
@@ -500,51 +502,243 @@ i{
     padding: 0 1em;
 }
 
-.details .info{
+.container .center-page .items-two .head-info .nav-title{
+    font-size: 24px;
+    font-family: inherit;
+    color: var(--light-bg-color);
+    opacity: .9;
+}
+
+.details .inputs .info{
     font-size: 20px;
     text-align: left;
     margin: 1em 0 0 .6em;
-    font-weight: 600;
+    font-weight: 500;
     color: white;
-}
-
-
-.details .inputs{
-    /* display: flex;
-    flex-direction: column; */
+    text-transform: uppercase;
 }
 
 .details .inputs .text{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    gap: 2em;
+}
+
+.details .inputs .text .content{
+    display: flex;
+    flex-direction: column;
+    margin-right: 2.5em;
+}
+
+.details .inputs .text .content .opt{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 .5em;
+}
+
+.details .inputs .text .content .opt span:last-child{
+    color: var(--primary-color);
+}
+
+.details .inputs .text .content .int{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: -1.8em;
+}
+
+.details .inputs .text .content .int a{
+    margin-left: .5em;
+    font-size: 18px;
+    opacity: .8;
+}
+
+.container .center-page .items-two .nav-details .details:not(:first-child){
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 1em;
+}
+
+#width-510{
+    width: 510px;
+}
+
+#width-150 .select-menu{
+    width: 110px;
+    padding: 0;
+    margin: 0;
+}
+#width-150 .select-menu .select-btn{
+    padding: 0 0 .3em .5em;
+}
+
+#width-150 .select-menu .options{
+    width: 100%;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+#width-150 .select-menu .text{
+    margin:0 0 0 .3em;
+}
+
+#width-150{
+    width: 100px;
+    margin-right: .4em;
+}
+
+
+#lok{
+    padding: 0;
+    margin: 0;
+    width: 225px;
+}
+
+#lok .select-menu{
+    padding: 0;
+}
+
+#lok .int .select-menu{
+    margin-top: 0;
+}
+
+#lok .int .select-menu .options{
+    width: 100%;
+}
+
+#lok .int .select-menu .options .option a{
+    font-size: small;
+}
+
+#p-head{
+    margin: 0;
+    padding: 0;
+}
+
+#p-head .select-menu{
+    margin: 0;
+    padding: 0;
+}
+
+#p-head .select-menu .select-btn{
+    background: transparent;
+    color: white;
+}
+
+#p-head .select-menu .select-btn h1{
+    font-family: inherit;
+    font-weight: 500;
+}
+
+#p-head .select-menu .select-btn i{
+    color: white;
+    margin-right: 2em;
+}
+
+#p-head .select-menu .options{
+    width: 90%;
+    margin-left: .4em;
+}
+
+
+#deet .content .int{
+    position: relative;
+
+}
+
+#deet .content .int input{
+    width: 210px;
+}
+
+#deet .content .int a i{
+    position: absolute;
+    margin: -.7em 0 0 -1.3em;
+}
+
+#deet .content{
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 .5em;
+}
+#deet .content .select-menu{
+    margin: 0;
+}
+
+#width-150{
+    width: 135px;
+}
+
+#width-600{
+    width: 600px;
+    max-width: 800px ;
+}
+
+.content .inti{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .inti a{
+    font-size: 18px;
+    opacity: .8;
+    margin-left: .5em;
+}
+
+
+.business-btn input{
+    margin: 1em .8em 0 0;
+    padding: .5em 1.3em;
+    font-family: inherit;
+    border-radius: 5px;
+    background-color: #4eaaf0;
+    color: white;
+    opacity: .9;
+    transition: .3s;
+}
+
+.business-btn input:hover{
+    transform: scale(1.05);
+    background-color: var(--primary-color);
+}
+
+.add-product{
+    color: var(--primary-color);
+    border-bottom: 1px solid;
+    padding: 0 2em .5em 0;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
     gap: 1em;
-    border: 1px solid;
+    justify-content: right;
+}
+
+.button input{
+    margin: 1em .8em 0 0;
+    padding: .5em 1.3em;
+    font-family: inherit;
+    border-radius: 5px;
+    background-color: #4eaaf0;
+    color: white;
+    opacity: .8;
+    transition: .3s;
+}
+
+.button input:hover{
+    transform: scale(1.05);
+    color: var(--primary-color);
+    opacity: .8;
 }
 
 
-
-/* .details .inputs .text .input1{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
+.save input{
+    background-color: yellow;
+    color: var(--dark-color);
 }
 
-
-.details .inputs .text .input2{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid;
-} */
-
-/* 
-.details .inputs .text {
-    border: 1px solid;
-    display: flex;
-    flex-wrap: wrap;
+.delete input{
+    background-color: #7c899a;
+    color: var(--dark-color);
 }
-
-.details .inputs .text .input{
-    display: flex;
-    flex-direction: column;
-} */
 
