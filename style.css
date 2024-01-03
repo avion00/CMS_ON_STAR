@@ -163,9 +163,13 @@ h4{
 /* Container */
 
  .container{
-    max-width: 16510px;
+    max-width: 1651px;
     min-width: 1080px;
     margin: 0 auto;
+    border: 1px groove var(--primary-color);
+    border-bottom: 0;
+    padding: 0 .5em;
+    position: relative;
  }
 
 .flexitem{
@@ -180,18 +184,27 @@ i{
     width:15%;
     text-align: right;
     min-width: 200px;
-    box-shadow: 10px 0 15px -7px rgba(173, 216, 230, 0.7);
-    height: auto;
+    height: 100vh;
+    position: sticky;
+  position: -webkit-sticky;
+  top: 0; 
 }
 
 .center-page{
     width: 60%;
     text-align: right;
+    box-shadow: 10px 0 15px -7px rgba(173, 216, 230, 0.7)inset;
+    overflow-y: scroll;
+    
 }
 
 .right-page{
     width: 25%;
     text-align: right;
+    height: 100vh;
+    position: sticky;
+  position: -webkit-sticky;
+  top: 0; 
 }
 
 
